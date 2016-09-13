@@ -64,6 +64,7 @@ E:\GPRS_CLOUD\GPRS_CLOUD\bin\Microsoft.Owin.Security.OAuth.xml
 E:\GPRS_CLOUD\GPRS_CLOUD\bin\Microsoft.Owin.Security.Google.xml
 E:\GPRS_CLOUD\GPRS_CLOUD\bin\Microsoft.Owin.Security.Twitter.xml
 E:\GPRS_CLOUD\GPRS_CLOUD\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\GPRS_CLOUD\GPRS_CLOUD\obj\Debug\GPRS_CLOUD.csprojResolveAssemblyReference.cache
 E:\GPRS_CLOUD\GPRS_CLOUD\obj\Debug\GPRS_CLOUD.Migrations.Initial.resources
 E:\GPRS_CLOUD\GPRS_CLOUD\obj\Debug\GPRS_CLOUD.csproj.GenerateResource.Cache
 E:\GPRS_CLOUD\GPRS_CLOUD\obj\Debug\GPRS_CLOUD.dll
