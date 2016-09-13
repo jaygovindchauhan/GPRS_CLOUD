@@ -1,0 +1,162 @@
+﻿@model IEnumerable<GPRS_CLOUD.Models.LiveWeather>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <style>
+        table th {
+            text-align: center !important;
+        }
+
+        .table-striped > tbody > tr:nth-child(odd) > td,
+        .table-striped > thead > tr > th {
+            background-color: #f1f1f1;
+        }
+
+        .table > tbody > tr > td, .table > tbody > tr > th,
+        .table > thead > tr > td, .table > thead > tr > th {
+            vertical-align: middle !important;
+        }
+
+        .greenicon {
+            color: #228b22;
+        }
+
+        .redicon {
+            color: #ff0000;
+        }
+        .mt50{
+            margin-top:50px;
+        }
+        .nav-tabs{
+          background-color:#f1f1f1;
+        }
+        .active{
+            border-top: 2px solid #337ab7;
+        }
+    </style>
+
+</head>
+
+<ul class="nav nav-tabs nav-justified mt50">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="/Graph/Index">Graph</a></li>
+    <li><a href="/HistoricalData">Historical Data</a></li>
+    <li><a href="#">Environment Benefit</a></li>
+    <li><a href="#">Site Information</a></li>
+</ul>
+
+<button type="button" class="btn btn-primary" style="margin-bottom:3px; margin-top:50px;">Export Data</button>
+<div class="well" style="font-size:24px; padding:2px; margin-bottom:0px;">
+    Live Monitoring:
+</div>
+    @*<div class="well" style="margin-bottom:0px; font-size:20px;">
+        Live Monitoring:- <span style="float:right;"><button type="button" class="btn btn-primary">Export Data</button></span>
+    </div>*@
+    <table class="table table-striped table-bordered text-center">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serial_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solar_Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pump)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Motor_Speed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weather)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Installation_Date)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.View)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serial_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Solar_Power)*@
+                    <button type="button" class="btn btn-primary">Update</button>
+
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Pump)*@
+                    <button type="button" class="btn btn-primary">Update</button>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Motor_Speed)<span style="margin-left:10px;">Hz</span>
+                </td>
+                <td>
+                    @*<img src="~/Assets/Images/Capture.PNG" />*@
+                    <img src="@Url.Content(item.Weather)" alt="weather-image" /> <br />
+                    @Html.DisplayFor(modelItem => item.Temp)<span style="margin-left:10px;"><sup>o</sup>C</span>
+                    @*@Html.DisplayFor(modelItem => item.Weather)*@
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Status)*@
+                    @if (item.Motor_Speed == Convert.ToString(0))
+                    {
+                        //Html.Display("");
+                        <i class="fa fa-circle fa-lg redicon"></i>
+                    }
+                    else
+                    {
+                        //String.Format("{0:0.##}", item.Amount);
+                        <i class="fa fa-circle fa-lg greenicon"></i>
+                    }
+
+
+
+
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Installation_Date)
+                </td>
+
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Installation_Date)*@
+                    <a href="#"><i class="fa fa-arrow-circle-right fa-3x"></i></a>
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                    </td>*@
+            </tr>
+        }
+
+    </table>
