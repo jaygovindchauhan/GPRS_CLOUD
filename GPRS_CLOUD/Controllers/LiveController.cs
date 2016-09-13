@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace GPRS_CLOUD.Controllers
 {
+    [Authorize]
     public class LiveController : Controller
     {
         // GET: Live
