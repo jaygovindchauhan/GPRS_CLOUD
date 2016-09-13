@@ -21,7 +21,7 @@ namespace GPRS_CLOUD.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LiveMoniterConnectionString", throwIfV1Schema: false)
         {
         }
 
