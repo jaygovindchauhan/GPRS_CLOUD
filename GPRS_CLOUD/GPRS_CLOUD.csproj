@@ -273,6 +273,7 @@
     <Content Include="Scripts\datepicker.en.js" />
     <Content Include="Scripts\datepicker.js" />
     <Content Include="Scripts\datepicker.min.js" />
+    <None Include="Properties\PublishProfiles\GPRS_Profile.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
