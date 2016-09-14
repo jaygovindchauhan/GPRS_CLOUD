@@ -139,7 +139,7 @@ namespace GPRS_CLOUD.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            return Content("Only admin can login");
         }
 
         //
@@ -169,7 +169,8 @@ namespace GPRS_CLOUD.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            //return View(model);
+            return Content("Only admin can login");
         }
 
         //
